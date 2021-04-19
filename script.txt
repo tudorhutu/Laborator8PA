@@ -1,0 +1,39 @@
+CREATE SCHEMA `movies` ;
+
+
+///////////////////////////////
+
+
+CREATE TABLE `movies`.`movies` (
+  `id` INT NOT NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `release_date` DATE NOT NULL,
+  `duration` VARCHAR(10) NOT NULL,
+  `Score` INT NULL,
+  PRIMARY KEY (`id`));
+
+//////////////////////////////////
+
+
+CREATE TABLE `movies`.`genres` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE);
+
+
+
+///////////////////////////////////
+
+CREATE TABLE `movies`.`junction` (
+  `idmovies` INT NOT NULL,
+  `idgenre` VARCHAR(45) NOT NULL);
+////////////////////////////////////
+
+CREATE TABLE `movies`.`actors` (
+  `idfilm` INT NOT NULL,
+  `stars` VARCHAR(150) NOT NULL,
+  `director` VARCHAR(25) NOT NULL,
+  PRIMARY KEY (`idfilm`));
+
+////////////////////////////////
